@@ -37,10 +37,16 @@
 							<goal>test</goal>
 						</goals>
 						<configuration>
+							
+					           <!-- <parallel>methods</parallel>
+							<threadCount>6</threadCount>
+							<perCoreThreadCount>false</perCoreThreadCount>  -->
+                                                   
 							<forkCount>16</forkCount>
 							<includes>
 								<include>**/temyersRunner*.java</include>
 							</includes>
+							
 						</configuration>
 					</execution>
 				</executions>
