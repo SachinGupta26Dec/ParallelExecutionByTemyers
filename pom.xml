@@ -68,10 +68,20 @@
 							</glue>
 							<outputDirectory>${project.build.directory}/generated-temyers-runners/</outputDirectory>
 							<featuresDirectory>src/test/resources/</featuresDirectory>
-							<cucumberOutputDir>${project.build.directory}/cucumber-json-reports</cucumberOutputDir>
+							<cucumberOutputDir>${project.build.directory}/cucumber-parallel/</cucumberOutputDir>
 							<plugins>
 								<plugin>
 									<name>json</name>
+									<outputDirectory>${project.build.directory}/cucumber-parallel/cucumber-json-reports</outputDirectory>
+								</plugin>
+								<plugin>
+									<name>html</name>
+									<extension>html</extension>
+									<outputDirectory>${project.build.directory}/cucumber-parallel/cucumber-html-reports</outputDirectory>
+								</plugin>
+								<plugin>
+									<name>rerun</name>
+									<outputDirectory>${project.build.directory}/cucumber-parallel/cucumber-rerun-reports</outputDirectory>
 								</plugin>
 							</plugins>
 							<monochrome>true</monochrome>
@@ -99,7 +109,7 @@
 						<configuration>
 							<projectName>Cucumber-API-Test</projectName>
 							<outputDirectory>${project.build.directory}/cucumber-masterthought-report</outputDirectory>
-							<inputDirectory>${project.build.directory}/cucumber-json-reports</inputDirectory>
+							<inputDirectory>${project.build.directory}/cucumber-parallel/cucumber-json-reports</inputDirectory>
 							<jsonFiles>
 								<param>**/*.json</param>
 							</jsonFiles>
